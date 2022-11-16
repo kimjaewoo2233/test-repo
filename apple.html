@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3624917c4f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <style>
+      :root {
+    /* Color */
+    --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+    /* Size */
+    --padding: 12px;
+    --avatar-size: 36px;
+
+    /* Font Size */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+button:focus {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #00ff0000;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+header .logo {
+    font-size: var(--font-large);
+}
+
+header .logo i {
+    color: var(--red-color);
+}
+
+header .icons .fa-search {
+    margin-right: var(--padding);
+}
+
+/* Video Player */
+.player {
+    text-align: center;
+    background-color: var(--black-color);
+    position: sticky;
+    top: 0;
+}
+
+.player video {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+}
+
+.infoAndUpNext > .info {
+    padding: var(--padding);
+}
+
+.info .metadata .hashtags {
+    display: flex;
+    font-size: var(--font-small);
+    color: var(--blue-color);
+}
+
+.info .metadata .hashtags li {
+    margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton {
+    display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+    font-size: var(--font-medium);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+    height: 100%;
+}
+
+.infoAndUpNext > .info .views {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .actions {
+    display: flex;
+    justify-content: space-around;
+    font-size: var(--font-small);
+}
+
+.info .actions button {
+    display: flex;
+    flex-direction: column;
+    margin: var(--padding) 0;
+    color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+    margin: 0 auto;
+    margin-bottom: calc(var(--padding )/ 2);
+    font-size: 16px;
+}
+
+.info .actions button i.active {
+    color: var(--blue-color);
+}
+
+/* Channel Description */
+.channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+}
+
+.channel .metadata {
+    display: flex;
+    align-items: center;
+}
+
+.channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+}
+
+.channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel .metadata .info .name {
+    font-size: var(--font-medium);
+}
+
+.channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.channel .subscribe {
+    color: var(--red-color);
+    font-size: var(--font-medium);
+}
+
+/* Up Next */
+.upNext {
+    padding: 0 var(--padding);
+}
+
+.upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding)/2);
+}
+
+.upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+
+.upNext .item .img{
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+
+.upNext .item .img img{
+    width: 100%;
+}
+
+.upNext .item .info{
+    flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn{
+    flex: 1 1 5%;
+}
+
+.upNext .item .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.upNext .item .info .name,
+.upNext .item .info .views {
+    font-size: var(--font-small);
+}
+
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media screen and (min-width: 768px)  {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding);
+    }
+}
+    </style>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <span class="title">Youtube</span>
+        </div>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+    <!-- Video Player -->
+    <section class="player">
+        <video controls src="test.jpg"></video>
+    </section>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">경고창</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>당신은 영상은 저작권 침해를 한 영상이므로 계정이 정지됩니다.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="close-btn btn btn-danger">확인</button>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Video Info -->
+    <div class="infoAndUpNext">
+
+        <section class="info">
+            <div class="metadata">
+                <ul class="hashtags">
+                    <li>#한림대</li>
+                    <li>#미디어리터러시</li>
+                    <li>#그렇다</li>
+                </ul>
+                <div class="titleAndButton">
+                    <span class="title"> [vlog]일상 브이로그(입터짐/시술한거 다 들킴/잭슨피자 컵누들/불닭볶음면 불닭쌈 나도 먹어봤다/디제이 생일 바위파스타/올리브영 추천템/석촌호수 오로라 돈까스/시바견 택이)  </span>
+                    <button class="moreBtn">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </div>
+                <span class="views">조회수 11,279회&nbsp;&nbsp;&nbsp; 2022. 11. 16</span>
+            </div>
+            <!-- Actions -->
+            <ul class="actions">
+                <li>
+                    <button>
+                        <i class="active fas fa-thumbs-up"></i>
+                        <span>19.9만</span>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <i class="fas fa-thumbs-down"></i>
+                        <span>103</span>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <i class="fas fa-share"></i>
+                        <span>공유</span>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <i class="fas fa-plus"></i>
+                        <span>저장</span>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <i class="fab fa-font-awesome-flag"></i>
+                        <span>신고</span>
+                    </button>
+                </li>
+            </ul>
+            <!-- Channel Description -->
+            <div class="channel">
+                <div class="metadata">
+                    <img src="/test.jpg" alt="">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<div class="info">
+                        <span class="name">최진솔</span>
+                        <span class="subscribers">1001 명</span>
+                    </div>
+                </div>
+                <button class="subscribe">구독</button>
+            </div>
+        </section>
+        <section class="upNext">
+            <span class="title">추천영상</span>
+            <ul>
+                <li class="item">
+                    <div class="img">
+                        <img src="jok.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">조커가 거울을 본다?</span>
+                        <span class="name">김조커</span>
+                        <span class="views">조회수 10만</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </li>
+                <li class="item">
+                    <div class="img">
+                        <img src="jodan.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">마이클 조던은 하늘을 날았다</span>
+                        <span class="name">박엠제이</span>
+                        <span class="views">조회수 4만</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </li>
+                <li class="item">
+                    <div class="img">
+                        <img src="maxresdefault.jpg" alt="" width="190" height="180">
+                    </div>
+                    <div class="info">
+                        <span class="title">기묘한 이야기는 이 세상에 없는 새로운 이야기라는걸 누구나 다 알고있겠지만..... 과연 그럴까요?</span>
+                        <span class="name">맛있는 형제들</span>
+                        <span class="views">조회수 54.7만</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+         const Modal = new bootstrap.Modal(document.querySelector(".modal"))
+
+         setTimeout(function() {
+            Modal.show()
+            }, 3000);
+        document.querySelector('.close-btn').addEventListener('click',function(){
+            Modal.hide();
+        })
+    </script>
+</body>
+</html>
